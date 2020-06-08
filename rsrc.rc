@@ -1,0 +1,60 @@
+#include "\masm32\include\resource.h"
+
+//#define IDD_MAIN                               101
+#define IDC_CONVERT                             1005
+#define IDC_EXIT                                1006
+#define IDC_CLEAR                               1007
+#define IDC_CELSIUS                             1011
+#define IDC_FAHRENHEIT                          1012
+#define IDC_TEMPERATURE                         1013
+#define IDC_STATIC2                             1016
+#define IDC_STATIC1                             1017
+#define IDC_RESULT 								1019
+
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+IDD_MAIN DIALOG 260, 200, 140, 80
+STYLE DS_3DLOOK | DS_CENTER | DS_MODALFRAME | DS_SHELLFONT | WS_CAPTION | WS_VISIBLE | WS_POPUP | WS_SYSMENU
+CAPTION "Fahrenheit to Celsius"
+FONT 8, "Ms Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "&Convert", IDC_CONVERT, 9, 54, 40, 15
+    PUSHBUTTON      "E&xit", IDC_EXIT, 93, 54, 40, 15
+    PUSHBUTTON      "C&lear", IDC_CLEAR, 51, 54, 40, 15
+    EDITTEXT        IDC_TEMPERATURE, 83, 7, 50, 15, ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_RESULT, 83, 37, 50, 15, ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Temperature:", IDC_STATIC1, 38, 10, 43, 8, SS_LEFT
+    AUTORADIOBUTTON "To Celsius", IDC_CELSIUS, 24, 24, 49, 8
+    AUTORADIOBUTTON "To Fahrenheit", IDC_FAHRENHEIT, 78, 24, 55, 8
+    LTEXT           "Result:", IDC_STATIC2, 58, 37, 23, 8, SS_LEFT
+END
+
+
+1 24 "manifest.xml"
+//10 ICON "ftoc.ico"
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 1, 0, 0, 0
+PRODUCTVERSION 1, 0, 0, 0
+FILEOS 4
+FILETYPE 1
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "CompanyName",      "Mark Albanese\000"
+      VALUE "FileDescription",  "Fahrenheit to Celsius Converter\000"
+      VALUE "FileVersion",      "Version 1.0\000"
+      VALUE "InternalName",     "FtoC\000"
+      VALUE "OriginalFilename", "FtoC_AsmWinapi.exe\000"
+      VALUE "ProductName",      "Fahrenheit to Celsius Converter\000"
+      VALUE "ProductVersion",   "Version 1.0\000"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x409, 0x4B0
+  END
+END  
+
+
