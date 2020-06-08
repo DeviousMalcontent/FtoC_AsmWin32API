@@ -51,7 +51,7 @@
         IDC_STATIC2       dd 1016
         IDC_STATIC1       dd 1017
         IDC_RESULT        dd 1019
-		
+
     .code
 start:
 ; #########################################################################
@@ -89,28 +89,28 @@ LOCAL r8[2]:REAL8
             
             invoke lstrcpy, ADDR inTempStr, ADDR emptyString
             invoke CatProc, ADDR inTempStr, ADDR stringBuffer
-					
-			; TODO:
-			; Validate input – check that it is a number  
-			; Radio buttons – set a default value, check what radio button has been pressed.
-			; Convert String to double (REAL8) ref: https://cs.fit.edu/~mmahoney/cse3101/float.html
-			; Do calculation:
-			
-			; ToCelsius: (TemperatureInput - 32) * 5 / 9
-			; fsub ADDR inTempStr,32
-			; fmul ADDR inTempStr,5
-			; fdiv ADDR inTempStr,9 
-			; 
-			; or something like that...
-			; 
-			; ToFahrenheit: TemperatureInput * 9 / 5 + 32
-			; fmul ADDR inTempStr,9
-			; fdiv ADDR inTempStr,5 
-			; fadd ADDR inTempStr,32
-			
-			; Ref: http://www.website.masmforum.com/tutorials/fptute/fpuchap8.htm
-			; 
-			; Validate output.
+
+            ; TODO:
+            ; Validate input – check that it is a number  
+            ; Radio buttons – set a default value, check what radio button has been pressed.
+            ; Convert String to double (REAL8) ref: https://cs.fit.edu/~mmahoney/cse3101/float.html
+            ; Do calculation:
+            
+            ; ToCelsius: (TemperatureInput - 32) * 5 / 9
+            ; fsub ADDR inTempStr,32
+            ; fmul ADDR inTempStr,5
+            ; fdiv ADDR inTempStr,9 
+            ; 
+            ; or something like that...
+            ; 
+            ; ToFahrenheit: TemperatureInput * 9 / 5 + 32
+            ; fmul ADDR inTempStr,9
+            ; fdiv ADDR inTempStr,5 
+            ; fadd ADDR inTempStr,32
+            
+            ; Ref: http://www.website.masmforum.com/tutorials/fptute/fpuchap8.htm
+            ; 
+            ; Validate output.
             
             invoke SetWindowText,FUNC(GetDlgItem,hWin,IDC_RESULT),ADDR inTempStr
           Case IDC_CLEAR

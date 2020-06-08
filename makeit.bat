@@ -4,7 +4,8 @@ if not exist rsrc.rc goto over1
 \masm32\bin\rc /v rsrc.rc
 \masm32\bin\cvtres /machine:ix86 rsrc.res
  :over1
- 
+
+if exist "FtoC_AsmWin32API.exe" del "FtoC_AsmWin32API.exe"
 if exist "ftoc.obj" del "ftoc.obj"
 if exist "ftoc.exe" del "ftoc.exe"
 
